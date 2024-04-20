@@ -1,0 +1,270 @@
+/* Resetiranje stilova za osnovne elemente */
+html, body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Osnovni stil za header */
+header {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Stil za naslov */
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+/* Stil za navigaciju */
+nav {
+  background-color: #333;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 10px 0;
+}
+
+nav li {
+  margin-right: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* Stil za glavni dio stranice */
+main {
+  text-align: justify;
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.clanci {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.clanak {
+  flex-basis: 33.33%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.clanak img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.clanak h3 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.clanak p {
+  margin-top: 5px;
+}
+
+.clanak a {
+  text-decoration: none;
+  color: #333;
+}
+
+.clanak a:hover {
+  text-decoration: underline;
+}
+
+/* Stiliziranje forme */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-field {
+  margin-top: 5px;
+}
+
+.input-text {
+  width: 100%;
+  padding: 5px;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Stil za footer */
+footer {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* section dio */
+section[role="main"] {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #b1b0b0;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.category {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.slika img {
+  max-width: 100%;
+  height: auto;
+}
+
+.about p,
+.sadrzaj p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/*Administracijski dio*/
+.admin-panel {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.admin-panel h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.admin-panel p {
+  margin-bottom: 10px;
+}
+
+.admin-panel h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.admin-panel table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-panel th, .admin-panel td {
+  padding: 8px;
+  border: 1px solid #333;
+}
+
+.admin-panel th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.admin-panel a {
+  text-decoration: none;
+  color: #333;
+}
+
+.admin-panel a:hover {
+  text-decoration: underline;
+}
+
+/*Registracija*/
+.poruka {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.porukaUspijeh {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.form-item {
+  margin-bottom: 10px;
+}
+
+.form-item label {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+}
+
+.form-item input[type="text"],
+.form-item input[type="password"] {
+  width: 300px;
+}
+
+.form-item input[type="submit"] {
+  width: auto;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>L'OBS</title>
+</head>
+<body>
+  <header>
+    <h1>L'OBS</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="kategorija.php?kategorija=sport">Sport</a></li>
+      <li><a href="kategorija.php?kategorija=kultura">Kultura</a></li>
+      <li><a href="unos.html">Unos</a></li>
+      <li><a href="login.php">Administracija</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <form action="skripta.php" method="POST" enctype="multipart/form-data">
+        <div class="form-item">
+            <label for="title">Naslov vijesti</label>
+            <div class="form-field">
+                <input type="text" name="title" id="title" class="form-field-textual">
+                <div id="title-error" class="error-message"></div>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label for="about">Kratki sadržaj vijesti (do 50 znakova)</label>
+            <div class="form-field">
+                <textarea name="about" id="about" cols="30" rows="10" class="form-field-textual"></textarea>
+                <div id="about-error" class="error-message"></div>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label for="content">Sadržaj vijesti</label>
+            <div class="form-field">
+                <textarea name="content" id="content" cols="30" rows="10" class="form-field-textual"></textarea>
+                <div id="content-error" class="error-message"></div>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label for="slika">Slika: </label>
+            <div class="form-field">
+                <input type="file" class="input-text" name="slika" id="slika">
+                <div id="slika-error" class="error-message"></div>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label for="category">Kategorija vijesti</label>
+            <div class="form-field">
+                <select name="category" id="category" class="form-field-textual">
+                    <option value="">Odaberi kategoriju</option>
+                    <option value="sport">Sport</option>
+                    <option value="kultura">Kultura</option>
+                </select>
+                <div id="category-error" class="error-message"></div>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label>Spremiti u arhivu: 
+            <div class="form-field">
+                <input type="checkbox" name="archive">
+            </div>
+            </label>
+        </div>
+
+        <div class="form-item">
+            <button type="reset" value="Poništi">Poništi</button>
+            <button type="submit" id="gumb" value="Prihvati">Prihvati</button>
+        </div>
+    </form>
+    
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2023 L'OBS</p>
+  </footer>
+
+  <script>
+    document.getElementById("gumb").onclick = function(event) {
+      var title = document.getElementById("title").value;
+      var about = document.getElementById("about").value;
+      var content = document.getElementById("content").value;
+      var slika = document.getElementById("slika").value;
+      var category = document.getElementById("category").value;
+
+      var titleError = document.getElementById("title-error");
+      var aboutError = document.getElementById("about-error");
+      var contentError = document.getElementById("content-error");
+      var slikaError = document.getElementById("slika-error");
+      var categoryError = document.getElementById("category-error");
+
+      //Resetiranje
+      titleError.innerHTML = "";
+      aboutError.innerHTML = "";
+      contentError.innerHTML = "";
+      slikaError.innerHTML = "";
+      categoryError.innerHTML = "";
+
+      var slanje = true;
+
+      if (title.length < 5 || title.length > 30) {
+        titleError.style.color = "red";
+        titleError.innerHTML = "Naslov vijesti mora imati 5 do 30 znakova.";
+        document.getElementById("title").style.borderColor = "red";
+        slanje = false;
+      }
+
+  
+      if (about.length < 10 || about.length > 100) {
+        aboutError.style.color = "red";
+        aboutError.innerHTML = "Kratki sadržaj vijesti mora imati 10 do 100 znakova.";
+        document.getElementById("about").style.borderColor = "red";
+        slanje = false;
+      }
+
+
+      if (content.trim() === "") {
+        contentError.style.color = "red";
+        contentError.innerHTML = "Sadržaj vijesti ne smije biti prazan.";
+        document.getElementById("content").style.borderColor = "red";
+        slanje = false;
+      }
+
+
+      if (slika === "") {
+        slikaError.style.color = "red";
+        slikaError.innerHTML = "Molimo odaberite sliku.";
+        document.getElementById("slika").style.borderColor = "red";
+        slanje = false;
+      }
+
+    
+      if (category === "") {
+        categoryError.style.color = "red";
+        categoryError.innerHTML = "Molimo odaberite kategoriju vijesti.";
+        document.getElementById("category").style.borderColor = "red";
+        slanje = false;
+      }
+
+      if(slanje != true){
+        event.preventDefault();
+      }
+    }
+  </script>
+
+</body>
+</html>
